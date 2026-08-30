@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Security Assessment — ThreatLens{% endblock %}
+{% block content %}
+
+<div class="page-wrapper">
+
+  <div class="step-tag">Step 2 of 2</div>
+  <h2 class="page-title">Guided Cybersecurity Assessment</h2>
+  <p class="page-subtitle">
+    Answer honestly — there are no wrong answers, and this only takes about
+    10 minutes. Your answers are used to calculate a transparent readiness
+    score.
+  </p>
+
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill" style="width:0%;"></div>
+  </div>
+
+  <form id="assessmentForm" action="/assessment" method="POST">
+
+    {% for category, questions in categories.items() %}
+    <div class="category-block">
+      <div class="category-label">📁 {{ category_labels[category] }}</div>
+
+      {% for q in questions %}
+      <div class="question-block">
+        <p class="question-text">{{ q.text }}</p>
+
+        {% for letter, option_text in q.options.items() %}
+        <label class="option">
+          <input type="radio" name="{{ q.id }}" value="{{ letter }}" required>
+          <span>{{ option_text }}</span>
+        </label>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+
+    <button type="submit" class="btn">See My Readiness Report →</button>
+
+  </form>
+
+</div>
+
+<script>
+  const form = document.getElementById('assessmentForm');
+  const progressFill = document.getElementById('progressFill');
+  const totalQuestions = form.querySelectorAll('.question-block').length;
+
+  function updateProgress() {
+    const answered = new Set();
+    form.querySelectorAll('input[type="radio"]:checked').forEach(input => {
+      answered.add(input.name);
+    });
+    const pct = totalQuestions ? Math.round((answered.size / totalQuestions) * 100) : 0;
+    progressFill.style.width = pct + '%';
+  }
+
+  form.addEventListener('change', updateProgress);
+  updateProgress();
+</script>
+
+{% endblock %}

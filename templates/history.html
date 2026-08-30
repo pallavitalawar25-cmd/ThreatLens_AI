@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Progress — ThreatLens{% endblock %}
+{% block content %}
+
+<div class="page-wrapper">
+
+  <div class="step-tag">📈 Progress Tracking</div>
+  <h2 class="page-title">{{ profile.business_name if profile else "Your" }} Progress</h2>
+  <p class="page-subtitle">
+    Every time you reassess, a new snapshot is saved so you can see whether
+    your readiness score is improving.
+  </p>
+
+  {% if not history %}
+  <div class="card">
+    <div class="card-body">
+      <p style="color:var(--text-muted);">No assessments on record yet.</p>
+      <a href="/business" class="btn" style="width:auto; margin-top:12px; display:inline-flex; padding:10px 18px;">Start Assessment →</a>
+    </div>
+  </div>
+  {% else %}
+
+  {% if progress %}
+  <div class="card">
+    <div class="card-header">↕ Change Since Last Assessment</div>
+    <div class="card-body">
+      <p style="margin-bottom:16px;">
+        Overall score: <strong>{{ progress.previous_overall }}</strong> → <strong>{{ progress.current_overall }}</strong>
+        {% if progress.overall_delta > 0 %}
+          <span class="risk-badge low">+{{ progress.overall_delta }}</span>
+        {% elif progress.overall_delta < 0 %}
+          <span class="risk-badge high">{{ progress.overall_delta }}</span>
+        {% else %}
+          <span class="risk-badge medium">No change</span>
+        {% endif %}
+      </p>
+      {% for key, d in progress.category_deltas.items() %}
+      <div class="category-score-row">
+        <div class="cat-name">{{ d.label }}</div>
+        <div class="bar-track">
+          <div class="bar-fill {{ 'low' if d.delta >= 0 else 'high' }}" style="width: {{ d.current_score }}%;"></div>
+        </div>
+        <div class="cat-score">{{ d.current_score }} ({{ '+' if d.delta >= 0 else '' }}{{ d.delta }})</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="card">
+    <div class="card-header">🗂 Assessment History</div>
+    <div class="card-body">
+      {% for snapshot in history | reverse %}
+      <div class="finding-block">
+        <div class="finding-head">
+          <h4>{{ snapshot.timestamp[:10] }}</h4>
+          <span class="risk-badge {{ snapshot.overall_risk_level | lower }}">{{ snapshot.overall_risk_level }}</span>
+          <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-faint);">{{ snapshot.overall_score }}/100</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <a href="/reassess" class="btn" style="width:auto; padding:10px 18px; display:inline-flex; margin-top:8px;">Reassess Now →</a>
+
+  {% endif %}
+
+</div>
+
+{% endblock %}

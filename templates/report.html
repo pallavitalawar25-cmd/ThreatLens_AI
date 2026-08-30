@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block title %}Readiness Report — ThreatLens{% endblock %}
+{% block content %}
+
+{% set risk_class = scoring.overall_risk_level | lower %}
+{% set circumference = 377 %}
+{% set offset = (circumference - (circumference * scoring.overall_score / 100)) | round(1) %}
+
+<div class="page-wrapper" data-threatlens-report>
+
+  <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; margin-bottom:8px;">
+    <div>
+      <div class="step-tag">📄 Cybersecurity Readiness Report</div>
+      <h2 class="page-title" style="margin-bottom:0;">{{ profile.business_name }}</h2>
+    </div>
+    <div class="btn-row" style="width:auto;">
+      <button class="btn secondary download-btn" onclick="window.print()" style="width:auto; padding:10px 18px;">⬇ Download as PDF</button>
+      <a href="/reassess" class="btn secondary" style="width:auto; padding:10px 18px;">↻ Reassess</a>
+    </div>
+  </div>
+  <p class="page-subtitle">Generated from your assessment answers using fixed, rule-based scoring.</p>
+
+  <!-- OVERALL READINESS -->
+  <div class="card">
+    <div class="card-header">🎯 Overall Readiness</div>
+    <div class="card-body">
+      <div class="gauge-row">
+        <div class="gauge">
+          <svg viewBox="0 0 140 140">
+            <circle class="gauge-track" cx="70" cy="70" r="60"></circle>
+            <circle class="gauge-fill {{ risk_class }}" cx="70" cy="70" r="60"
+              stroke-dasharray="{{ circumference }}" stroke-dashoffset="{{ offset }}"></circle>
+          </svg>
+          <div class="gauge-number">
+            <div class="value">{{ scoring.overall_score }}</div>
+            <div class="max">/ 100</div>
+          </div>
+        </div>
+        <div class="gauge-meta">
+          <span class="risk-badge {{ risk_class }}">{{ scoring.overall_risk_level }} RISK</span>
+          <h3 style="margin-top:12px;">
+            {% if scoring.overall_risk_level == "LOW" %}
+              Solid baseline readiness.
+            {% elif scoring.overall_risk_level == "MEDIUM" %}
+              Meaningful gaps to close.
+            {% else %}
+              Several high-priority gaps.
+            {% endif %}
+          </h3>
+          <p id="ai-overall-summary">
+  AI security insights are being generated...
+</p>
+
+<div id="ai-status" style="margin-top:8px; font-size:13px; color:var(--text-faint);">
+  ⏳ Generating AI security insights...
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUSINESS PROFILE -->
+  <div class="card">
+    <div class="card-header">🏢 Business Profile</div>
+    <div class="card-body">
+      <p><strong>Type:</strong> {{ profile.business_type }} &nbsp;•&nbsp; <strong>Employees:</strong> {{ profile.employee_count }} &nbsp;•&nbsp; <strong>Devices:</strong> {{ profile.device_count }}</p>
+      {% if profile.cloud_services %}
+      <p style="margin-top:8px;"><strong>Cloud services:</strong> {{ profile.cloud_services | join(", ") }}</p>
+      {% endif %}
+      {% if profile.important_data %}
+      <p style="margin-top:8px;"><strong>Sensitive data handled:</strong> {{ profile.important_data | join(", ") }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- CATEGORY SCORES -->
+  <div class="card">
+    <div class="card-header">📊 Category Scores</div>
+    <div class="card-body">
+      {% for key, data in scoring.category_scores.items() %}
+      <div class="category-score-row">
+        <div class="cat-name">{{ data.label }}</div>
+        <div class="bar-track">
+          <div class="bar-fill {{ data.risk_level | lower }}" style="width: {{ data.score }}%;"></div>
+        </div>
+        <div class="cat-score">{{ data.score }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- PRIORITY FINDINGS -->
+  <div class="card">
+    <div class="card-header">⚠️ Priority Findings</div>
+    <div class="card-body">
+      {% for key, data in priority_findings %}
+      <div class="finding-block" data-ai-finding="{{ key }}">
+        <div class="finding-head">
+          <h4>{{ data.label }}</h4>
+          <span class="risk-badge {{ data.risk_level | lower }}">{{ data.risk_level }}</span>
+          <span style="font-family:var(--font-mono); font-size:13px; color:var(--text-faint);">{{ data.score }}/100</span>
+        </div>
+        <p class="ai-why">AI explanation is being generated...</p>
+
+<ul class="ai-actions">
+  <li>AI recommendations will appear here shortly.</li>
+</ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- ROADMAP -->
+    <!-- ROADMAP -->
+  <div class="card">
+    <div class="card-header">🛣️ 30/60/90-Day Roadmap</div>
+
+    <div class="card-body">
+      <div class="roadmap-columns">
+
+        {% for bucket, bucket_label in [
+          ("30_days", "First 30 Days"),
+          ("60_days", "Next 60 Days"),
+          ("90_days", "Next 90 Days")
+        ] %}
+
+        <div class="roadmap-col" data-ai-roadmap="{{ bucket }}">
+
+          <div class="phase-label">{{ bucket_label }}</div>
+
+          <p class="phase-summary ai-phase-summary">
+            AI roadmap guidance is being generated...
+          </p>
+
+          <ul class="ai-phase-actions">
+            <li>AI action items will appear here shortly.</li>
+          </ul>
+
+        </div>
+
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-row" style="margin-top:8px;">
+    <a href="/history" class="btn secondary">View Progress Over Time</a>
+    <a href="/reassess" class="btn">Reassess Now</a>
+  </div>
+
+</div>
+
+{% endblock %}

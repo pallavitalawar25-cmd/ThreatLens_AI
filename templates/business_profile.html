@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title %}Business Profile — ThreatLens{% endblock %}
+{% block content %}
+
+<div class="page-wrapper narrow">
+
+  <div class="form-card">
+    <div class="step-tag">Step 1 of 2</div>
+    <h2 class="page-title" style="font-size:24px;">Tell us about your business</h2>
+    <p class="page-subtitle" style="margin-bottom:28px;">
+      This helps us tailor the assessment and your report. Nothing here is
+      shared outside this session.
+    </p>
+
+    <form action="/business" method="POST">
+
+      <div class="form-group">
+        <label for="business_name">Business Name</label>
+        <input type="text" id="business_name" name="business_name" placeholder="e.g. Riverside Bakery" required>
+      </div>
+
+      <div class="row">
+        <div class="form-group half">
+          <label for="business_type">Business Type</label>
+          <select id="business_type" name="business_type" required>
+            <option value="" disabled selected>Select</option>
+            <option value="Retail / E-commerce">Retail / E-commerce</option>
+            <option value="Professional Services">Professional Services</option>
+            <option value="Healthcare / Medical">Healthcare / Medical</option>
+            <option value="Restaurant / Hospitality">Restaurant / Hospitality</option>
+            <option value="Manufacturing">Manufacturing</option>
+            <option value="Finance / Accounting">Finance / Accounting</option>
+            <option value="Nonprofit">Nonprofit</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group half">
+          <label for="employee_count">Number of Employees</label>
+          <select id="employee_count" name="employee_count" required>
+            <option value="" disabled selected>Select</option>
+            <option value="1-5">1–5</option>
+            <option value="6-20">6–20</option>
+            <option value="21-50">21–50</option>
+            <option value="51-100">51–100</option>
+            <option value="100+">100+</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="device_count">Approximate Number of Devices <span class="hint">(computers, phones, POS terminals used for work)</span></label>
+        <select id="device_count" name="device_count" required>
+          <option value="" disabled selected>Select</option>
+          <option value="1-5">1–5</option>
+          <option value="6-20">6–20</option>
+          <option value="21-50">21–50</option>
+          <option value="50+">50+</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Cloud Services You Use <span class="hint">(select all that apply)</span></label>
+        <div class="checkbox-grid">
+          {% for service in ["Email (Gmail/Outlook)", "File Storage (Drive/Dropbox)", "Accounting Software", "CRM / Sales Tools", "Point of Sale (POS)", "Payroll / HR Software", "E-commerce Platform", "None of these"] %}
+          <label class="checkbox-pill">
+            <input type="checkbox" name="cloud_services" value="{{ service }}"> {{ service }}
+          </label>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Sensitive Data You Handle <span class="hint">(select all that apply)</span></label>
+        <div class="checkbox-grid">
+          {% for item in ["Customer Personal Info", "Payment / Card Data", "Employee Records", "Health Information", "Financial Records", "Proprietary / Trade Secrets", "None of these"] %}
+          <label class="checkbox-pill">
+            <input type="checkbox" name="important_data" value="{{ item }}"> {{ item }}
+          </label>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group half">
+          <label for="state">State <span class="hint">(optional)</span></label>
+          <input type="text" id="state" name="state" placeholder="Enter your state">
+        </div>
+        <div class="form-group half">
+          <label for="district">City / District <span class="hint">(optional)</span></label>
+          <input type="text" id="district" name="district" placeholder="Enter your city">
+        </div>
+      </div>
+
+      <button type="submit" class="btn" style="margin-top:8px;">Continue to Assessment →</button>
+
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

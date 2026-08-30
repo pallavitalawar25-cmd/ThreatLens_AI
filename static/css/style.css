@@ -1,0 +1,534 @@
+/* ThreatLens — stylesheet
+   This is intentionally the ORIGINAL CareerCompass AI visual system
+   (palette, typography, card/button/input/progress styling) carried
+   over as-is. Only new component types needed for cybersecurity
+   content (risk badges, score gauge, roadmap columns) were added,
+   and they were built using the same tokens/spacing/radius language
+   as the rest of the app so they don't look bolted on.
+*/
+
+:root {
+  /* ---- original CareerCompass tokens, unchanged ---- */
+  --bg: #0d0b1a;
+  --surface: #14101f;       /* card background */
+  --surface-alt: #1b1730;   /* input / chip / card-header background */
+  --border: #22203a;        /* navbar/footer hairlines */
+  --border-alt: #2a2540;    /* card borders */
+  --border-input: #322c4d;  /* input/option borders */
+
+  --text: #ffffff;
+  --text-muted: #cfcbe0;
+  --text-faint: #a29dbd;
+  --text-faint-2: #9691b0;
+  --text-footer: #8a84a0;
+
+  --accent: #8b5cf6;        /* primary purple */
+  --accent-strong: #a855f7; /* highlight purple, used for <span> emphasis */
+  --accent-btn-start: #7c3aed;
+  --accent-btn-end: #3b82f6;
+
+  --step-tag-bg: #2c1c4d;
+  --step-tag-text: #a855f7;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-mono: 'Courier New', Consolas, monospace; /* used sparingly for score readouts */
+
+  /* ---- semantic risk colors, layered on top for the new content ---- */
+  --risk-low: #4ade80;
+  --risk-low-bg: rgba(74, 222, 128, 0.12);
+  --risk-low-border: rgba(74, 222, 128, 0.35);
+
+  --risk-medium: #fbbf24;
+  --risk-medium-bg: rgba(251, 191, 36, 0.12);
+  --risk-medium-border: rgba(251, 191, 36, 0.35);
+
+  --risk-high: #f87171;
+  --risk-high-bg: rgba(248, 113, 113, 0.12);
+  --risk-high-border: rgba(248, 113, 113, 0.35);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ---------------- NAVBAR (unchanged from original) ---------------- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-area { display: flex; align-items: center; gap: 10px; }
+
+.logo-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text h1 { font-size: 22px; color: var(--text); }
+.logo-text h1 span { color: var(--accent); }
+
+.logo-text p {
+  font-size: 12px;
+  color: var(--text-faint-2);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* ---------------- LAYOUT ---------------- */
+
+.page-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.page-wrapper.narrow { max-width: 550px; }
+
+.step-tag {
+  display: inline-block;
+  background-color: var(--step-tag-bg);
+  color: var(--step-tag-text);
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.page-title {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  color: var(--text-faint);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* ---------------- CARDS (original report.html card system) ---------------- */
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border-alt);
+  border-radius: var(--radius);
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: var(--surface-alt);
+  border-bottom: 1px solid var(--border-alt);
+  padding: 14px 22px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-body { padding: 22px; }
+
+.card-body p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.card-body p strong,
+.card-body p span { color: var(--accent-strong); font-weight: bold; }
+
+.card-body ul { padding-left: 20px; }
+.card-body ul li { font-size: 14px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.5; }
+
+.form-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border-alt);
+  border-radius: var(--radius);
+  padding: 40px;
+  width: 100%;
+}
+
+/* ---------------- FORMS (original personal.html form system) ---------------- */
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.form-group .hint {
+  font-size: 11.5px;
+  color: var(--text-faint-2);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-input);
+  background-color: var(--surface-alt);
+  color: var(--text);
+  font-size: 14px;
+  font-family: var(--font-body);
+}
+
+.form-group input::placeholder { color: #7a7492; }
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.form-group select { cursor: pointer; }
+
+.row { display: flex; flex-wrap: wrap; gap: 15px; }
+.row .half { flex: 1 1 200px; }
+
+/* checkbox grid — from interests.html */
+.checkbox-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.checkbox-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--surface-alt);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--text-muted);
+  cursor: pointer;
+  flex: 1 1 220px;
+}
+
+.checkbox-pill:hover { border-color: var(--accent); }
+
+.checkbox-pill input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* buttons — original gradient next-btn / start-btn */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: var(--accent-btn-start);
+  background-image: linear-gradient(to right, var(--accent-btn-start), var(--accent-btn-end));
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.btn:hover { opacity: 0.9; }
+
+.btn.secondary {
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid var(--border-input);
+  color: var(--text-muted);
+}
+
+.btn.secondary:hover { border-color: var(--accent); opacity: 1; color: var(--text); }
+
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-row .btn { width: auto; flex: 1 1 200px; }
+
+/* ---------------- ASSESSMENT QUESTIONS (original aptitude.html .option) ---------------- */
+
+.category-block {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.category-block:last-child { border-bottom: none; }
+
+.category-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-strong);
+  margin-bottom: 16px;
+}
+
+.question-block { margin-bottom: 20px; }
+
+.question-text {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: var(--surface-alt);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  cursor: pointer;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.option:hover { border-color: var(--accent); }
+
+.option input {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* progress bar — identical component/values to original report.html .progress */
+.progress-track {
+  width: 100%;
+  background-color: var(--surface-alt);
+  border: 1px solid var(--border-alt);
+  border-radius: var(--radius-sm);
+  height: 24px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-image: linear-gradient(to right, var(--accent-btn-start), var(--accent-btn-end));
+  transition: width 0.2s ease;
+}
+
+/* ---------------- SCORE GAUGE (new — built from existing tokens) ---------------- */
+
+.gauge-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.gauge {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  flex-shrink: 0;
+}
+
+.gauge svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+
+.gauge-track { fill: none; stroke: var(--surface-alt); stroke-width: 10; }
+.gauge-fill { fill: none; stroke-width: 10; stroke-linecap: round; }
+
+.gauge-fill.low { stroke: var(--risk-low); }
+.gauge-fill.medium { stroke: var(--risk-medium); }
+.gauge-fill.high { stroke: var(--risk-high); }
+
+.gauge-number {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-number .value {
+  font-family: var(--font-mono);
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.gauge-number .max {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-faint-2);
+}
+
+.gauge-meta h3 { font-size: 17px; color: var(--text); margin-bottom: 6px; }
+.gauge-meta p { color: var(--text-muted); font-size: 13.5px; max-width: 360px; line-height: 1.6; }
+
+/* ---------------- RISK BADGES (new) ---------------- */
+
+.risk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+
+.risk-badge.low { color: var(--risk-low); background: var(--risk-low-bg); border-color: var(--risk-low-border); }
+.risk-badge.medium { color: var(--risk-medium); background: var(--risk-medium-bg); border-color: var(--risk-medium-border); }
+.risk-badge.high { color: var(--risk-high); background: var(--risk-high-bg); border-color: var(--risk-high-border); }
+
+/* ---------------- CATEGORY SCORE BARS (styled like the original personality progress bars) ---------------- */
+
+.category-score-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 9px 0;
+}
+
+.category-score-row .cat-name {
+  flex: 0 0 190px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.category-score-row .bar-track {
+  flex: 1;
+  height: 10px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border-alt);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.category-score-row .bar-fill { height: 100%; border-radius: 999px; }
+.category-score-row .bar-fill.low { background: var(--risk-low); }
+.category-score-row .bar-fill.medium { background: var(--risk-medium); }
+.category-score-row .bar-fill.high { background: var(--risk-high); }
+
+.category-score-row .cat-score {
+  flex: 0 0 40px;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text);
+  font-weight: bold;
+}
+
+/* ---------------- FINDINGS / ROADMAP ---------------- */
+
+.finding-block { padding: 16px 0; border-bottom: 1px solid var(--border); }
+.finding-block:last-child { border-bottom: none; }
+
+.finding-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.finding-head h4 { font-size: 15px; color: var(--text); }
+
+.roadmap-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.roadmap-col {
+  border: 1px solid var(--border-alt);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  background: var(--surface-alt);
+}
+
+.roadmap-col .phase-label {
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--accent-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.roadmap-col p.phase-summary { font-size: 12.5px; color: var(--text-faint); margin-bottom: 10px; }
+.roadmap-col ul { margin-left: 16px; font-size: 13px; color: var(--text-muted); }
+.roadmap-col li { margin-bottom: 6px; }
+
+@media (max-width: 700px) {
+  .roadmap-columns { grid-template-columns: 1fr; }
+  .navbar, .page-wrapper, .footer { padding-left: 20px; padding-right: 20px; }
+  .form-card { padding: 25px; }
+  .category-score-row .cat-name { flex-basis: 120px; }
+}
+
+/* ---------------- FOOTER (unchanged from original) ---------------- */
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 20px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+  color: var(--text-footer);
+  font-size: 13px;
+}
+
+/* ---------------- PRINT ---------------- */
+
+@media print {
+  .navbar, .footer, .download-btn, .btn-row { display: none !important; }
+  body { background: white; color: black; }
+  .card { border: 1px solid #ddd; page-break-inside: avoid; }
+}

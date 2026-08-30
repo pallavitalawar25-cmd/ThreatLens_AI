@@ -1,0 +1,1181 @@
+{
+  "3f2ea7fe8afa": [
+    {
+      "timestamp": "2026-08-29T10:22:31.430527+00:00",
+      "business_profile": {
+        "business_name": "Riverside bakey",
+        "business_type": "Retail / E-commerce",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "Accounting Software",
+          "E-commerce Platform"
+        ],
+        "device_count": "1-5",
+        "district": "Bengaluru",
+        "employee_count": "1-5",
+        "important_data": [
+          "Customer Personal Info",
+          "Payment / Card Data",
+          "Employee Records"
+        ],
+        "state": "Karnataka"
+      },
+      "overall_score": 85,
+      "overall_risk_level": "LOW",
+      "category_scores": {
+        "authentication": {
+          "score": 67,
+          "label": "Authentication",
+          "risk_level": "MEDIUM"
+        },
+        "access_control": {
+          "score": 100,
+          "label": "Access Control",
+          "risk_level": "LOW"
+        },
+        "password_practices": {
+          "score": 100,
+          "label": "Password Practices",
+          "risk_level": "LOW"
+        },
+        "mfa": {
+          "score": 100,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "LOW"
+        },
+        "backup_recovery": {
+          "score": 100,
+          "label": "Backup & Recovery",
+          "risk_level": "LOW"
+        },
+        "device_security": {
+          "score": 100,
+          "label": "Device Security",
+          "risk_level": "LOW"
+        },
+        "data_protection": {
+          "score": 100,
+          "label": "Data Protection",
+          "risk_level": "LOW"
+        },
+        "employee_awareness": {
+          "score": 100,
+          "label": "Employee Security Awareness",
+          "risk_level": "LOW"
+        },
+        "cloud_security": {
+          "score": 83,
+          "label": "Cloud Security",
+          "risk_level": "LOW"
+        },
+        "incident_preparedness": {
+          "score": 0,
+          "label": "Incident Preparedness",
+          "risk_level": "HIGH"
+        }
+      },
+      "ai_advice": {
+        "category_explanations": {
+          "authentication": "This measures how securely users verify their identities. Your medium-risk score indicates some login entry points might lack optimal security settings, potentially exposing client accounts or customer data to unauthorized access.",
+          "access_control": "This tracks how well you restrict access to sensitive business data. Your score shows excellent control, ensuring only authorized personnel can access critical files.",
+          "password_practices": "This monitors the strength and management of your passwords. Your perfect score shows your team follows excellent password hygiene to keep accounts secure.",
+          "mfa": "Multi-Factor Authentication adds an extra security layer beyond passwords. Your score shows that MFA is successfully deployed across your key business systems.",
+          "backup_recovery": "This evaluates your ability to restore operations after data loss. Your perfect score means you have highly reliable backups in place to recover quickly from an issue.",
+          "device_security": "This measures the safety of your computers, phones, and tablets. Your score indicates your physical business devices are extremely well-protected against common digital threats.",
+          "data_protection": "This looks at how safely you handle and store sensitive files like customer personal info and card data. Your score shows excellent, secure data-handling habits.",
+          "employee_awareness": "This evaluates how well your team understands security best practices. Your team has demonstrated outstanding awareness, making them a strong first line of defense.",
+          "cloud_security": "This looks at the security configurations of your online tools like Gmail, accounting software, and your e-commerce platform. Your high score shows great safety, though there is still a small margin for improvement.",
+          "incident_preparedness": "This assesses whether you have a plan in place to respond if a cyber attack or outage occurs. A score of zero means there is currently no plan, leaving the bakery vulnerable to extended downtime or confusion during an emergency."
+        },
+        "priority_findings": [
+          {
+            "category": "incident_preparedness",
+            "why_it_matters": "Without an incident plan, a sudden website outage or compromised account can lead to lost sales, leaked customer payment info, and confusion about how to recover.",
+            "recommended_actions": [
+              "Create a simple, printed one-page checklist of what steps to take if your e-commerce site or payment system goes offline.",
+              "Write down a list of essential emergency contacts, including your IT support, bank, e-commerce platform provider, and internet provider.",
+              "Draft a basic message template to quickly notify customers if their personal information is ever compromised."
+            ]
+          },
+          {
+            "category": "authentication",
+            "why_it_matters": "Slight weaknesses in your authentication setup can give attackers an opportunity to bypass passwords on key applications like your email or billing software.",
+            "recommended_actions": [
+              "Review and remove any old or inactive employee logins from your email and administrative portals.",
+              "Set up automatic logout timers on shared bakery devices so active sessions close when idle.",
+              "Ensure that administrative logins are personal and never shared among staff members."
+            ]
+          },
+          {
+            "category": "cloud_security",
+            "why_it_matters": "Because your bakery relies on cloud services for sales and accounting, minor setup gaps could leave transaction records or customer data exposed.",
+            "recommended_actions": [
+              "Audit the third-party integrations connected to your e-commerce platform and remove any that are outdated or unused.",
+              "Turn on login notifications so you receive an alert if someone logs in from an unrecognized device or location."
+            ]
+          },
+          {
+            "category": "access_control",
+            "why_it_matters": "Maintaining strict access control keeps sensitive employee records and payment data safe from unauthorized internal or external viewing.",
+            "recommended_actions": [
+              "Continue your current practice of giving staff members access only to the files necessary for their specific daily duties.",
+              "Schedule a quick, bi-annual review to confirm that nobody has accumulated unnecessary access privileges."
+            ]
+          },
+          {
+            "category": "password_practices",
+            "why_it_matters": "Strong passwords stop cybercriminals from using automated guessing tools to break into your e-commerce platform and banking tools.",
+            "recommended_actions": [
+              "Ensure that any new business accounts or software introduced in the future continue to use complex, unique passwords.",
+              "Continue utilizing a secure password manager to store and organize credentials safely."
+            ]
+          }
+        ],
+        "roadmap": {
+          "30_days": {
+            "summary": "Create a basic emergency response checklist to prepare the bakery for unexpected digital disruptions.",
+            "action_items": [
+              "Draft a simple, step-by-step incident response sheet listing who to call and how to take systems offline if a breach occurs.",
+              "Keep a printed copy of emergency support contacts for your e-commerce host, banking services, and internet provider near your primary workstation."
+            ]
+          },
+          "60_days": {
+            "summary": "Tighten user login settings and review administrative access across all business platforms.",
+            "action_items": [
+              "Audit active users on your Gmail, accounting, and e-commerce platforms to delete any old accounts.",
+              "Ensure that every staff member logs in using their own unique credentials rather than sharing a single admin account."
+            ]
+          },
+          "90_days": {
+            "summary": "Review your cloud software settings and perform light maintenance to keep your strong security posture on track.",
+            "action_items": [
+              "Check your e-commerce and email settings to ensure no unapproved third-party apps have access to your data.",
+              "Review your data backups to verify they are still running successfully without errors."
+            ]
+          }
+        },
+        "overall_summary": "Riverside bakery is in an excellent overall position with top-tier habits in password management, data protection, and backup procedures. Your main focus now should be on creating an emergency response plan to handle unexpected disruptions, alongside reviewing login practices for your cloud services. Taking these straightforward steps will keep your e-commerce platform secure and protect your customers' payment data."
+      }
+    },
+    {
+      "timestamp": "2026-08-29T10:26:57.370991+00:00",
+      "business_profile": {
+        "business_name": "Riverside bakey",
+        "business_type": "Retail / E-commerce",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "Accounting Software",
+          "E-commerce Platform"
+        ],
+        "device_count": "1-5",
+        "district": "Bengaluru",
+        "employee_count": "1-5",
+        "important_data": [
+          "Customer Personal Info",
+          "Payment / Card Data",
+          "Employee Records"
+        ],
+        "state": "Karnataka"
+      },
+      "overall_score": 85,
+      "overall_risk_level": "LOW",
+      "category_scores": {
+        "authentication": {
+          "score": 67,
+          "label": "Authentication",
+          "risk_level": "MEDIUM"
+        },
+        "access_control": {
+          "score": 100,
+          "label": "Access Control",
+          "risk_level": "LOW"
+        },
+        "password_practices": {
+          "score": 100,
+          "label": "Password Practices",
+          "risk_level": "LOW"
+        },
+        "mfa": {
+          "score": 100,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "LOW"
+        },
+        "backup_recovery": {
+          "score": 100,
+          "label": "Backup & Recovery",
+          "risk_level": "LOW"
+        },
+        "device_security": {
+          "score": 100,
+          "label": "Device Security",
+          "risk_level": "LOW"
+        },
+        "data_protection": {
+          "score": 100,
+          "label": "Data Protection",
+          "risk_level": "LOW"
+        },
+        "employee_awareness": {
+          "score": 100,
+          "label": "Employee Security Awareness",
+          "risk_level": "LOW"
+        },
+        "cloud_security": {
+          "score": 83,
+          "label": "Cloud Security",
+          "risk_level": "LOW"
+        },
+        "incident_preparedness": {
+          "score": 0,
+          "label": "Incident Preparedness",
+          "risk_level": "HIGH"
+        }
+      },
+      "ai_advice": {
+        "category_explanations": {
+          "incident_preparedness": "This measures your readiness to respond to a cyber incident or data breach. A score of 0 means there is no plan in place, which could lead to severe business disruption or loss of customer trust if an issue arises.",
+          "authentication": "This evaluates how securely users prove their identity to access your business systems. Your score of 67 indicates that while some security measures are in place, there are gaps that could allow unauthorized access.",
+          "cloud_security": "This looks at how well your cloud-based tools like email, accounting, and e-commerce platforms are secured. Your score of 83 is strong, but small gaps remain that could expose customer or payment data.",
+          "access_control": "This assesses how well you restrict access to sensitive business tools and information. Your score of 100 means you are successfully ensuring only authorized users can access your systems.",
+          "password_practices": "This measures the strength and security of the passwords used across your business. Your score of 100 shows excellent habits in keeping your login credentials secure."
+        },
+        "priority_findings": [
+          {
+            "category": "incident_preparedness",
+            "why_it_matters": "Without a basic response plan, Riverside bakey risks prolonged operational downtime, financial loss, and reputational damage if customer or payment data is compromised.",
+            "recommended_actions": [
+              "Create a simple, step-by-step checklist of actions to take if a system is compromised or customer data is leaked.",
+              "Compile a written list of emergency contacts, including your IT support, bank, and legal advisors, and store it offline.",
+              "Establish a clear communication process for notifying affected customers and authorities in the event of a data breach."
+            ]
+          },
+          {
+            "category": "authentication",
+            "why_it_matters": "Weak authentication makes it easier for cybercriminals to compromise your business email, accounting software, or e-commerce platforms.",
+            "recommended_actions": [
+              "Enforce multi-factor authentication (MFA) on all business email, accounting, and e-commerce admin accounts.",
+              "Ensure idle sessions on all critical cloud applications are configured to log out automatically after a period of inactivity.",
+              "Deactivate any old, unused, or guest user accounts across your primary business platforms."
+            ]
+          },
+          {
+            "category": "cloud_security",
+            "why_it_matters": "Because you handle customer personal information and payment data online, any minor cloud misconfiguration could lead to unauthorized data exposure.",
+            "recommended_actions": [
+              "Review external sharing permissions on your e-commerce and accounting platforms to ensure data isn't publicly visible.",
+              "Set up automatic notifications or alerts for unusual login attempts on your primary cloud services.",
+              "Restrict third-party application integrations in your business email and e-commerce platform to trusted services only."
+            ]
+          },
+          {
+            "category": "access_control",
+            "why_it_matters": "Maintaining tight control over who has access to customer and financial records is vital to prevent accidental or unauthorized internal data exposure.",
+            "recommended_actions": [
+              "Perform a routine quarterly review of who has access to your e-commerce admin and accounting tools.",
+              "Ensure employees are only granted the minimum level of system access necessary to perform their daily duties.",
+              "Document a standard process to immediately revoke all system access whenever an employee leaves the business."
+            ]
+          },
+          {
+            "category": "password_practices",
+            "why_it_matters": "Keeping password practices strong is your first line of defense against brute-force attacks and account takeovers.",
+            "recommended_actions": [
+              "Continue utilizing a secure, centralized password manager for all employees to store and share business credentials.",
+              "Strictly prohibit the sharing of business passwords over insecure channels like SMS or email.",
+              "Ensure default passwords on any newly introduced software, hardware, or smart devices are changed immediately upon setup."
+            ]
+          }
+        ],
+        "roadmap": {
+          "30_days": {
+            "summary": "Focus on establishing emergency protocols to protect your retail business in the event of a security incident.",
+            "action_items": [
+              "Draft a basic, written incident response plan outlining immediate steps to take if your business systems are compromised.",
+              "Compile and securely store an offline list of essential emergency contacts, including bank and IT support details."
+            ]
+          },
+          "60_days": {
+            "summary": "Strengthen identity verification and account safety measures across your critical retail and business applications.",
+            "action_items": [
+              "Enable and enforce multi-factor authentication (MFA) across all email, e-commerce, and accounting accounts.",
+              "Conduct an audit to identify and permanently delete any inactive or legacy employee accounts."
+            ]
+          },
+          "90_days": {
+            "summary": "Maintain your strong security posture through routine reviews of system permissions and password policies.",
+            "action_items": [
+              "Review cloud sharing settings to ensure customer records and employee files are not exposed to the public.",
+              "Establish a routine schedule for checking user access rights to ensure they align with active job roles."
+            ]
+          }
+        },
+        "overall_summary": "Riverside bakey exhibits a strong baseline security posture with low overall risk, particularly due to excellent password practices and access controls. However, a complete lack of incident preparedness means the business is highly vulnerable to disruption if a security event occurs. By focusing first on building a simple incident response plan and locking down authentication, you can safely protect your customer and payment data."
+      }
+    }
+  ],
+  "9f951a8e9fbc": [
+    {
+      "timestamp": "2026-08-29T10:55:54.929278+00:00",
+      "business_profile": {
+        "business_name": "Riverside bakey",
+        "business_type": "Retail / E-commerce",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "File Storage (Drive/Dropbox)",
+          "Accounting Software",
+          "E-commerce Platform"
+        ],
+        "device_count": "6-20",
+        "district": "Bengaluru",
+        "employee_count": "1-5",
+        "important_data": [
+          "Customer Personal Info",
+          "Payment / Card Data",
+          "Employee Records"
+        ],
+        "state": "Karnataka"
+      },
+      "overall_score": 80,
+      "overall_risk_level": "LOW",
+      "category_scores": {
+        "authentication": {
+          "score": 67,
+          "label": "Authentication",
+          "risk_level": "MEDIUM"
+        },
+        "access_control": {
+          "score": 100,
+          "label": "Access Control",
+          "risk_level": "LOW"
+        },
+        "password_practices": {
+          "score": 100,
+          "label": "Password Practices",
+          "risk_level": "LOW"
+        },
+        "mfa": {
+          "score": 100,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "LOW"
+        },
+        "backup_recovery": {
+          "score": 33,
+          "label": "Backup & Recovery",
+          "risk_level": "HIGH"
+        },
+        "device_security": {
+          "score": 67,
+          "label": "Device Security",
+          "risk_level": "MEDIUM"
+        },
+        "data_protection": {
+          "score": 67,
+          "label": "Data Protection",
+          "risk_level": "MEDIUM"
+        },
+        "employee_awareness": {
+          "score": 67,
+          "label": "Employee Security Awareness",
+          "risk_level": "MEDIUM"
+        },
+        "cloud_security": {
+          "score": 100,
+          "label": "Cloud Security",
+          "risk_level": "LOW"
+        },
+        "incident_preparedness": {
+          "score": 100,
+          "label": "Incident Preparedness",
+          "risk_level": "LOW"
+        }
+      },
+      "ai_advice": null
+    }
+  ],
+  "2ac297ec7fc0": [
+    {
+      "timestamp": "2026-08-29T12:48:48.829832+00:00",
+      "business_profile": {
+        "business_name": "Riverside bakery",
+        "business_type": "Retail / E-commerce",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "File Storage (Drive/Dropbox)",
+          "E-commerce Platform"
+        ],
+        "device_count": "6-20",
+        "district": "mysuru",
+        "employee_count": "6-20",
+        "important_data": [
+          "Customer Personal Info",
+          "Payment / Card Data",
+          "Employee Records"
+        ],
+        "state": "karnataka"
+      },
+      "overall_score": 85,
+      "overall_risk_level": "LOW",
+      "category_scores": {
+        "authentication": {
+          "score": 50,
+          "label": "Authentication",
+          "risk_level": "MEDIUM"
+        },
+        "access_control": {
+          "score": 83,
+          "label": "Access Control",
+          "risk_level": "LOW"
+        },
+        "password_practices": {
+          "score": 100,
+          "label": "Password Practices",
+          "risk_level": "LOW"
+        },
+        "mfa": {
+          "score": 100,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "LOW"
+        },
+        "backup_recovery": {
+          "score": 67,
+          "label": "Backup & Recovery",
+          "risk_level": "MEDIUM"
+        },
+        "device_security": {
+          "score": 67,
+          "label": "Device Security",
+          "risk_level": "MEDIUM"
+        },
+        "data_protection": {
+          "score": 100,
+          "label": "Data Protection",
+          "risk_level": "LOW"
+        },
+        "employee_awareness": {
+          "score": 83,
+          "label": "Employee Security Awareness",
+          "risk_level": "LOW"
+        },
+        "cloud_security": {
+          "score": 100,
+          "label": "Cloud Security",
+          "risk_level": "LOW"
+        },
+        "incident_preparedness": {
+          "score": 100,
+          "label": "Incident Preparedness",
+          "risk_level": "LOW"
+        }
+      },
+      "ai_advice": null
+    }
+  ],
+  "51b7b326fbb0": [
+    {
+      "timestamp": "2026-08-29T13:07:24.696217+00:00",
+      "business_profile": {
+        "business_name": "Riverside bakey",
+        "business_type": "Retail / E-commerce",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "File Storage (Drive/Dropbox)",
+          "Accounting Software",
+          "E-commerce Platform"
+        ],
+        "device_count": "6-20",
+        "district": "Bengaluru",
+        "employee_count": "6-20",
+        "important_data": [
+          "Customer Personal Info",
+          "Payment / Card Data",
+          "Employee Records"
+        ],
+        "state": "Karnataka"
+      },
+      "overall_score": 78,
+      "overall_risk_level": "LOW",
+      "category_scores": {
+        "authentication": {
+          "score": 83,
+          "label": "Authentication",
+          "risk_level": "LOW"
+        },
+        "access_control": {
+          "score": 67,
+          "label": "Access Control",
+          "risk_level": "MEDIUM"
+        },
+        "password_practices": {
+          "score": 83,
+          "label": "Password Practices",
+          "risk_level": "LOW"
+        },
+        "mfa": {
+          "score": 100,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "LOW"
+        },
+        "backup_recovery": {
+          "score": 67,
+          "label": "Backup & Recovery",
+          "risk_level": "MEDIUM"
+        },
+        "device_security": {
+          "score": 67,
+          "label": "Device Security",
+          "risk_level": "MEDIUM"
+        },
+        "data_protection": {
+          "score": 83,
+          "label": "Data Protection",
+          "risk_level": "LOW"
+        },
+        "employee_awareness": {
+          "score": 83,
+          "label": "Employee Security Awareness",
+          "risk_level": "LOW"
+        },
+        "cloud_security": {
+          "score": 83,
+          "label": "Cloud Security",
+          "risk_level": "LOW"
+        },
+        "incident_preparedness": {
+          "score": 67,
+          "label": "Incident Preparedness",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "ai_advice": null
+    },
+    {
+      "timestamp": "2026-08-29T13:07:40.101466+00:00",
+      "business_profile": {
+        "business_name": "Riverside bakey",
+        "business_type": "Retail / E-commerce",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "File Storage (Drive/Dropbox)",
+          "Accounting Software",
+          "E-commerce Platform"
+        ],
+        "device_count": "6-20",
+        "district": "Bengaluru",
+        "employee_count": "6-20",
+        "important_data": [
+          "Customer Personal Info",
+          "Payment / Card Data",
+          "Employee Records"
+        ],
+        "state": "Karnataka"
+      },
+      "overall_score": 78,
+      "overall_risk_level": "LOW",
+      "category_scores": {
+        "authentication": {
+          "score": 83,
+          "label": "Authentication",
+          "risk_level": "LOW"
+        },
+        "access_control": {
+          "score": 67,
+          "label": "Access Control",
+          "risk_level": "MEDIUM"
+        },
+        "password_practices": {
+          "score": 83,
+          "label": "Password Practices",
+          "risk_level": "LOW"
+        },
+        "mfa": {
+          "score": 100,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "LOW"
+        },
+        "backup_recovery": {
+          "score": 67,
+          "label": "Backup & Recovery",
+          "risk_level": "MEDIUM"
+        },
+        "device_security": {
+          "score": 67,
+          "label": "Device Security",
+          "risk_level": "MEDIUM"
+        },
+        "data_protection": {
+          "score": 83,
+          "label": "Data Protection",
+          "risk_level": "LOW"
+        },
+        "employee_awareness": {
+          "score": 83,
+          "label": "Employee Security Awareness",
+          "risk_level": "LOW"
+        },
+        "cloud_security": {
+          "score": 83,
+          "label": "Cloud Security",
+          "risk_level": "LOW"
+        },
+        "incident_preparedness": {
+          "score": 67,
+          "label": "Incident Preparedness",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "ai_advice": null
+    }
+  ],
+  "2899538da620": [
+    {
+      "timestamp": "2026-08-29T13:15:29.828012+00:00",
+      "business_profile": {
+        "business_name": "Riverside bakey",
+        "business_type": "Retail / E-commerce",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "File Storage (Drive/Dropbox)",
+          "E-commerce Platform"
+        ],
+        "device_count": "6-20",
+        "district": "Bengaluru",
+        "employee_count": "6-20",
+        "important_data": [
+          "Customer Personal Info",
+          "Payment / Card Data",
+          "Employee Records"
+        ],
+        "state": "Karnataka"
+      },
+      "overall_score": 67,
+      "overall_risk_level": "MEDIUM",
+      "category_scores": {
+        "authentication": {
+          "score": 67,
+          "label": "Authentication",
+          "risk_level": "MEDIUM"
+        },
+        "access_control": {
+          "score": 67,
+          "label": "Access Control",
+          "risk_level": "MEDIUM"
+        },
+        "password_practices": {
+          "score": 67,
+          "label": "Password Practices",
+          "risk_level": "MEDIUM"
+        },
+        "mfa": {
+          "score": 67,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "MEDIUM"
+        },
+        "backup_recovery": {
+          "score": 67,
+          "label": "Backup & Recovery",
+          "risk_level": "MEDIUM"
+        },
+        "device_security": {
+          "score": 67,
+          "label": "Device Security",
+          "risk_level": "MEDIUM"
+        },
+        "data_protection": {
+          "score": 67,
+          "label": "Data Protection",
+          "risk_level": "MEDIUM"
+        },
+        "employee_awareness": {
+          "score": 67,
+          "label": "Employee Security Awareness",
+          "risk_level": "MEDIUM"
+        },
+        "cloud_security": {
+          "score": 67,
+          "label": "Cloud Security",
+          "risk_level": "MEDIUM"
+        },
+        "incident_preparedness": {
+          "score": 67,
+          "label": "Incident Preparedness",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "ai_advice": null
+    },
+    {
+      "timestamp": "2026-08-29T13:16:12.853762+00:00",
+      "business_profile": {
+        "business_name": "Riverside bakey",
+        "business_type": "Retail / E-commerce",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "File Storage (Drive/Dropbox)",
+          "E-commerce Platform"
+        ],
+        "device_count": "6-20",
+        "district": "Bengaluru",
+        "employee_count": "6-20",
+        "important_data": [
+          "Customer Personal Info",
+          "Payment / Card Data",
+          "Employee Records"
+        ],
+        "state": "Karnataka"
+      },
+      "overall_score": 67,
+      "overall_risk_level": "MEDIUM",
+      "category_scores": {
+        "authentication": {
+          "score": 67,
+          "label": "Authentication",
+          "risk_level": "MEDIUM"
+        },
+        "access_control": {
+          "score": 67,
+          "label": "Access Control",
+          "risk_level": "MEDIUM"
+        },
+        "password_practices": {
+          "score": 67,
+          "label": "Password Practices",
+          "risk_level": "MEDIUM"
+        },
+        "mfa": {
+          "score": 67,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "MEDIUM"
+        },
+        "backup_recovery": {
+          "score": 67,
+          "label": "Backup & Recovery",
+          "risk_level": "MEDIUM"
+        },
+        "device_security": {
+          "score": 67,
+          "label": "Device Security",
+          "risk_level": "MEDIUM"
+        },
+        "data_protection": {
+          "score": 67,
+          "label": "Data Protection",
+          "risk_level": "MEDIUM"
+        },
+        "employee_awareness": {
+          "score": 67,
+          "label": "Employee Security Awareness",
+          "risk_level": "MEDIUM"
+        },
+        "cloud_security": {
+          "score": 67,
+          "label": "Cloud Security",
+          "risk_level": "MEDIUM"
+        },
+        "incident_preparedness": {
+          "score": 67,
+          "label": "Incident Preparedness",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "ai_advice": null
+    }
+  ],
+  "0121d0207c13": [
+    {
+      "timestamp": "2026-08-29T13:25:07.279602+00:00",
+      "business_profile": {
+        "business_name": "Riverside bakey",
+        "business_type": "Healthcare / Medical",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "File Storage (Drive/Dropbox)",
+          "Accounting Software",
+          "Payroll / HR Software",
+          "E-commerce Platform"
+        ],
+        "device_count": "50+",
+        "district": "Bengaluru",
+        "employee_count": "21-50",
+        "important_data": [
+          "Customer Personal Info",
+          "Payment / Card Data",
+          "Employee Records",
+          "Health Information",
+          "Financial Records"
+        ],
+        "state": "Karnataka"
+      },
+      "overall_score": 48,
+      "overall_risk_level": "HIGH",
+      "category_scores": {
+        "authentication": {
+          "score": 83,
+          "label": "Authentication",
+          "risk_level": "LOW"
+        },
+        "access_control": {
+          "score": 50,
+          "label": "Access Control",
+          "risk_level": "MEDIUM"
+        },
+        "password_practices": {
+          "score": 33,
+          "label": "Password Practices",
+          "risk_level": "HIGH"
+        },
+        "mfa": {
+          "score": 83,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "LOW"
+        },
+        "backup_recovery": {
+          "score": 50,
+          "label": "Backup & Recovery",
+          "risk_level": "MEDIUM"
+        },
+        "device_security": {
+          "score": 50,
+          "label": "Device Security",
+          "risk_level": "MEDIUM"
+        },
+        "data_protection": {
+          "score": 50,
+          "label": "Data Protection",
+          "risk_level": "MEDIUM"
+        },
+        "employee_awareness": {
+          "score": 67,
+          "label": "Employee Security Awareness",
+          "risk_level": "MEDIUM"
+        },
+        "cloud_security": {
+          "score": 17,
+          "label": "Cloud Security",
+          "risk_level": "HIGH"
+        },
+        "incident_preparedness": {
+          "score": 0,
+          "label": "Incident Preparedness",
+          "risk_level": "HIGH"
+        }
+      },
+      "ai_advice": null
+    },
+    {
+      "timestamp": "2026-08-29T13:32:24.587287+00:00",
+      "business_profile": {
+        "business_name": "Riverside bakey",
+        "business_type": "Healthcare / Medical",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "File Storage (Drive/Dropbox)",
+          "Accounting Software",
+          "Payroll / HR Software",
+          "E-commerce Platform"
+        ],
+        "device_count": "50+",
+        "district": "Bengaluru",
+        "employee_count": "21-50",
+        "important_data": [
+          "Customer Personal Info",
+          "Payment / Card Data",
+          "Employee Records",
+          "Health Information",
+          "Financial Records"
+        ],
+        "state": "Karnataka"
+      },
+      "overall_score": 48,
+      "overall_risk_level": "HIGH",
+      "category_scores": {
+        "authentication": {
+          "score": 83,
+          "label": "Authentication",
+          "risk_level": "LOW"
+        },
+        "access_control": {
+          "score": 50,
+          "label": "Access Control",
+          "risk_level": "MEDIUM"
+        },
+        "password_practices": {
+          "score": 33,
+          "label": "Password Practices",
+          "risk_level": "HIGH"
+        },
+        "mfa": {
+          "score": 83,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "LOW"
+        },
+        "backup_recovery": {
+          "score": 50,
+          "label": "Backup & Recovery",
+          "risk_level": "MEDIUM"
+        },
+        "device_security": {
+          "score": 50,
+          "label": "Device Security",
+          "risk_level": "MEDIUM"
+        },
+        "data_protection": {
+          "score": 50,
+          "label": "Data Protection",
+          "risk_level": "MEDIUM"
+        },
+        "employee_awareness": {
+          "score": 67,
+          "label": "Employee Security Awareness",
+          "risk_level": "MEDIUM"
+        },
+        "cloud_security": {
+          "score": 17,
+          "label": "Cloud Security",
+          "risk_level": "HIGH"
+        },
+        "incident_preparedness": {
+          "score": 0,
+          "label": "Incident Preparedness",
+          "risk_level": "HIGH"
+        }
+      },
+      "ai_advice": null
+    }
+  ],
+  "2df76a1341b7": [
+    {
+      "timestamp": "2026-08-29T13:33:49.544607+00:00",
+      "business_profile": {
+        "business_name": "Bakery",
+        "business_type": "Retail / E-commerce",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "File Storage (Drive/Dropbox)",
+          "Accounting Software"
+        ],
+        "device_count": "6-20",
+        "district": "hasan",
+        "employee_count": "1-5",
+        "important_data": [
+          "Financial Records",
+          "None of these"
+        ],
+        "state": "karnataka"
+      },
+      "overall_score": 42,
+      "overall_risk_level": "HIGH",
+      "category_scores": {
+        "authentication": {
+          "score": 33,
+          "label": "Authentication",
+          "risk_level": "HIGH"
+        },
+        "access_control": {
+          "score": 33,
+          "label": "Access Control",
+          "risk_level": "HIGH"
+        },
+        "password_practices": {
+          "score": 17,
+          "label": "Password Practices",
+          "risk_level": "HIGH"
+        },
+        "mfa": {
+          "score": 50,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "MEDIUM"
+        },
+        "backup_recovery": {
+          "score": 33,
+          "label": "Backup & Recovery",
+          "risk_level": "HIGH"
+        },
+        "device_security": {
+          "score": 67,
+          "label": "Device Security",
+          "risk_level": "MEDIUM"
+        },
+        "data_protection": {
+          "score": 50,
+          "label": "Data Protection",
+          "risk_level": "MEDIUM"
+        },
+        "employee_awareness": {
+          "score": 17,
+          "label": "Employee Security Awareness",
+          "risk_level": "HIGH"
+        },
+        "cloud_security": {
+          "score": 67,
+          "label": "Cloud Security",
+          "risk_level": "MEDIUM"
+        },
+        "incident_preparedness": {
+          "score": 50,
+          "label": "Incident Preparedness",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "ai_advice": null
+    }
+  ],
+  "b7313938319f": [
+    {
+      "timestamp": "2026-08-29T13:38:12.639115+00:00",
+      "business_profile": {
+        "business_name": "Bakery",
+        "business_type": "Retail / E-commerce",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "File Storage (Drive/Dropbox)",
+          "Accounting Software",
+          "E-commerce Platform"
+        ],
+        "device_count": "6-20",
+        "district": "Hasan",
+        "employee_count": "1-5",
+        "important_data": [
+          "Customer Personal Info",
+          "Payment / Card Data",
+          "Financial Records"
+        ],
+        "state": "Karnataka"
+      },
+      "overall_score": 53,
+      "overall_risk_level": "MEDIUM",
+      "category_scores": {
+        "authentication": {
+          "score": 17,
+          "label": "Authentication",
+          "risk_level": "HIGH"
+        },
+        "access_control": {
+          "score": 50,
+          "label": "Access Control",
+          "risk_level": "MEDIUM"
+        },
+        "password_practices": {
+          "score": 33,
+          "label": "Password Practices",
+          "risk_level": "HIGH"
+        },
+        "mfa": {
+          "score": 50,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "MEDIUM"
+        },
+        "backup_recovery": {
+          "score": 83,
+          "label": "Backup & Recovery",
+          "risk_level": "LOW"
+        },
+        "device_security": {
+          "score": 17,
+          "label": "Device Security",
+          "risk_level": "HIGH"
+        },
+        "data_protection": {
+          "score": 83,
+          "label": "Data Protection",
+          "risk_level": "LOW"
+        },
+        "employee_awareness": {
+          "score": 67,
+          "label": "Employee Security Awareness",
+          "risk_level": "MEDIUM"
+        },
+        "cloud_security": {
+          "score": 67,
+          "label": "Cloud Security",
+          "risk_level": "MEDIUM"
+        },
+        "incident_preparedness": {
+          "score": 67,
+          "label": "Incident Preparedness",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "ai_advice": null
+    }
+  ],
+  "dc3d5d861b1e": [
+    {
+      "timestamp": "2026-08-30T05:31:13.210622+00:00",
+      "business_profile": {
+        "business_name": "Riverside bakey",
+        "business_type": "Healthcare / Medical",
+        "cloud_services": [
+          "Email (Gmail/Outlook)",
+          "File Storage (Drive/Dropbox)",
+          "Accounting Software"
+        ],
+        "device_count": "50+",
+        "district": "Bengaluru",
+        "employee_count": "21-50",
+        "important_data": [
+          "Customer Personal Info",
+          "Payment / Card Data",
+          "Employee Records",
+          "Health Information",
+          "Financial Records"
+        ],
+        "state": "Karnataka"
+      },
+      "overall_score": 57,
+      "overall_risk_level": "MEDIUM",
+      "category_scores": {
+        "authentication": {
+          "score": 17,
+          "label": "Authentication",
+          "risk_level": "HIGH"
+        },
+        "access_control": {
+          "score": 83,
+          "label": "Access Control",
+          "risk_level": "LOW"
+        },
+        "password_practices": {
+          "score": 17,
+          "label": "Password Practices",
+          "risk_level": "HIGH"
+        },
+        "mfa": {
+          "score": 50,
+          "label": "Multi-Factor Authentication",
+          "risk_level": "MEDIUM"
+        },
+        "backup_recovery": {
+          "score": 50,
+          "label": "Backup & Recovery",
+          "risk_level": "MEDIUM"
+        },
+        "device_security": {
+          "score": 33,
+          "label": "Device Security",
+          "risk_level": "HIGH"
+        },
+        "data_protection": {
+          "score": 83,
+          "label": "Data Protection",
+          "risk_level": "LOW"
+        },
+        "employee_awareness": {
+          "score": 50,
+          "label": "Employee Security Awareness",
+          "risk_level": "MEDIUM"
+        },
+        "cloud_security": {
+          "score": 83,
+          "label": "Cloud Security",
+          "risk_level": "LOW"
+        },
+        "incident_preparedness": {
+          "score": 100,
+          "label": "Incident Preparedness",
+          "risk_level": "LOW"
+        }
+      },
+      "ai_advice": null
+    }
+  ]
+}

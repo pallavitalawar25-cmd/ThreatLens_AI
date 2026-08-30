@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}ThreatLens — Cybersecurity Readiness for Small Businesses{% endblock %}
+{% block content %}
+
+<div class="page-wrapper" style="max-width: 1040px;">
+
+  <div style="display:flex; flex-wrap:wrap; gap:48px; align-items:center; margin-bottom:56px;">
+    <div style="flex:1 1 480px;">
+      <div class="step-tag">🛡 Cybersecurity Readiness for Small Businesses</div>
+      <h1 style="font-size:38px; font-weight:800; letter-spacing:-0.02em; line-height:1.2; margin-bottom:16px;">
+        Know where your business actually stands on <span style="color:var(--brand);">security</span>.
+      </h1>
+      <p style="color:var(--text-muted); font-size:16px; line-height:1.6; max-width:480px; margin-bottom:28px;">
+        A guided assessment, a transparent readiness score, and a plain-language
+        30/60/90-day plan — built for business owners, not IT departments.
+      </p>
+      <a href="/business" class="btn" style="width:auto; padding:13px 28px; display:inline-flex;">
+        Start Free Assessment →
+      </a>
+      <p style="font-size:12.5px; color:var(--text-faint); margin-top:14px;">
+        Takes about 10 minutes. No technical knowledge required.
+      </p>
+    </div>
+
+    <div style="flex:1 1 360px;">
+      <div class="card" style="margin-bottom:0;">
+        <div class="card-body">
+          <div class="gauge-row" style="justify-content:center;">
+            <div class="gauge">
+              <svg viewBox="0 0 140 140">
+                <circle class="gauge-track" cx="70" cy="70" r="60"></circle>
+                <circle class="gauge-fill medium" cx="70" cy="70" r="60"
+                  stroke-dasharray="377" stroke-dashoffset="132"></circle>
+              </svg>
+              <div class="gauge-number">
+                <div class="value">65</div>
+                <div class="max">/ 100</div>
+              </div>
+            </div>
+          </div>
+          <p style="text-align:center; color:var(--text-muted); font-size:13px; margin-top:12px;">
+            Example readiness score — yours is calculated from your actual answers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title" style="color:var(--brand-dark); font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:18px;">
+    What the assessment covers
+  </div>
+
+  <div class="checkbox-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); margin-bottom:56px;">
+    {% for label in ["Authentication", "Access Control", "Password Practices", "Multi-Factor Authentication", "Backup & Recovery", "Device Security", "Data Protection", "Employee Awareness", "Cloud Security", "Incident Preparedness"] %}
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-body" style="padding:16px 18px;">
+        <p style="font-size:13.5px; font-weight:600;">{{ label }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="card">
+    <div class="card-body" style="display:flex; gap:32px; flex-wrap:wrap;">
+      <div style="flex:1 1 260px;">
+        <h3 style="font-size:15px; margin-bottom:8px;">Scoring you can trust</h3>
+        <p style="color:var(--text-muted); font-size:13.5px; line-height:1.6;">
+          Your readiness score is calculated by fixed, transparent rules —
+          not by an AI guessing a number. Gemini only explains the results
+          and prioritizes what to do next.
+        </p>
+      </div>
+      <div style="flex:1 1 260px;">
+        <h3 style="font-size:15px; margin-bottom:8px;">What this isn't</h3>
+        <p style="color:var(--text-muted); font-size:13.5px; line-height:1.6;">
+          ThreatLens is a readiness assessment and decision-support tool.
+          It doesn't perform penetration testing, vulnerability scanning,
+          or real-time threat monitoring.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
