@@ -117,7 +117,9 @@ a { text-decoration: none; color: inherit; }
   padding: 48px 24px 80px;
 }
 
-.page-wrapper.narrow { max-width: 550px; }
+.page-wrapper.narrow {
+  max-width: 760px;
+}
 
 .step-tag {
   display: inline-block;
